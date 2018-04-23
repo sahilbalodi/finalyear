@@ -71,6 +71,17 @@ server.route([{
       response(error.message);
     });
   },
+},
+{
+  path: '/patients',
+  method: 'GET',
+  handler: (request, response) => {
+    Models.patients.findAll().then((result) => {
+      response(result);
+    }).catch((error) => {
+      response(error.message);
+    });
+  },
 }]);
 const init = async () => {
   await server.start();
