@@ -9,7 +9,7 @@ const client = require('twilio')(
 const fileName = path.join(__dirname, './build/index.html');
 const server = new Hapi.Server();
 server.connection({
-  port: 8080,
+  port: 8000,
   host: '0.0.0.0',
 });
 server.route([{
