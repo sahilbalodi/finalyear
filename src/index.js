@@ -1,14 +1,16 @@
 const Models = require('../models');
 const Hapi = require('hapi');
+const path = require('path');
 const client = require('twilio')(
   'AC031ea78f67bfefeb3686f7f94064dc23',
   '559ba81c5fc0c481404e2d190ff67738',
 );
 
+const fileName = path.join(__dirname, './build/index.html');
 const server = new Hapi.Server();
 server.connection({
   port: 8080,
-  host: 'localhost',
+  host: '0.0.0.0',
 });
 server.route([{
   path: '/data',
@@ -77,10 +79,21 @@ server.route([{
   method: 'GET',
   handler: (request, response) => {
     Models.patients.findAll().then((result) => {
-      response(result);
+      const send = [];
+      result.forEach((entry) => {
+        send.push(entry.get({ plain: true }));
+      });
+      response(send);
     }).catch((error) => {
       response(error.message);
     });
+  },
+},
+{
+  path: '/',
+  method: 'GET',
+  handler: (request, reply) => {
+    reply.file(fileName);
   },
 }]);
 const init = async () => {
