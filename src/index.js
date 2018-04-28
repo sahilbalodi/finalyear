@@ -1,6 +1,7 @@
 const Models = require('../models');
 const Hapi = require('hapi');
 const path = require('path');
+const inert = require('inert');
 const client = require('twilio')(
   'AC031ea78f67bfefeb3686f7f94064dc23',
   '559ba81c5fc0c481404e2d190ff67738',
@@ -12,7 +13,20 @@ server.connection({
   port: 8000,
   host: '0.0.0.0',
 });
-server.route([{
+server.register(inert);
+server.route([ {
+  path: '/css',
+  method: 'GET',
+  handler: {
+    file: path.join(__dirname, './build/static/css/main.a6c0720f.css'),
+  },
+}, {
+  path: '/js',
+  method: 'GET',
+  handler: {
+    file: path.join(__dirname, './build/static/js/main.2dcc509a.js'),
+  },
+},{
   path: '/data',
   method: 'GET',
   handler: (request, response) => {
