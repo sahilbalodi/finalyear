@@ -14,7 +14,7 @@ server.connection({
   host: '0.0.0.0',
 });
 server.register(inert);
-server.route([ {
+server.route([{
   path: '/css',
   method: 'GET',
   handler: {
@@ -24,9 +24,9 @@ server.route([ {
   path: '/js',
   method: 'GET',
   handler: {
-    file: path.join(__dirname, './build/static/js/main.2dcc509a.js'),
+    file: path.join(__dirname, './build/static/js/main.67b79c18.js'),
   },
-},{
+}, {
   path: '/data',
   method: 'GET',
   handler: (request, response) => {
