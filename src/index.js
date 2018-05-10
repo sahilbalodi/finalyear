@@ -18,13 +18,13 @@ server.route([{
   path: '/css',
   method: 'GET',
   handler: {
-    file: path.join(__dirname, './build/static/css/main.a6c0720f.css'),
+    file: path.join(__dirname, './build/static/css/main.b611fc13.css'),
   },
 }, {
   path: '/js',
   method: 'GET',
   handler: {
-    file: path.join(__dirname, './build/static/js/main.67b79c18.js'),
+    file: path.join(__dirname, './build/static/js/main.cfd5cbc6.js'),
   },
 }, {
   path: '/data',
