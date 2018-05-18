@@ -2,6 +2,7 @@ const Models = require('../models');
 const Hapi = require('hapi');
 const path = require('path');
 const inert = require('inert');
+const fs = require('fs');
 const client = require('twilio')(
   'AC031ea78f67bfefeb3686f7f94064dc23',
   '559ba81c5fc0c481404e2d190ff67738',
@@ -23,8 +24,8 @@ server.route([{
 }, {
   path: '/img',
   method: 'GET',
-  handler: {
-    file: path.join(__dirname, '../img.png'),
+  handler: (request, response) => {
+    response(fs.readFileSync(path.join(__dirname, '../img.png')));
   },
 }, {
   path: '/js',

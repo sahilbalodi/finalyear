@@ -17,6 +17,7 @@
     "sequelize-cli": "^4.0.0"
   },
   "dependencies": {
+    "fs": "0.0.1-security",
     "hapi": "^16.6.3",
     "inert": "^4.2.1",
     "path": "^0.12.7",
