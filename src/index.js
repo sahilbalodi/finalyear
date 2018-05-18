@@ -21,6 +21,12 @@ server.route([{
     file: path.join(__dirname, './build/static/css/main.b611fc13.css'),
   },
 }, {
+  path: '/img',
+  method: 'GET',
+  handler: {
+    file: path.join(__dirname, '../img.png'),
+  },
+}, {
   path: '/js',
   method: 'GET',
   handler: {
