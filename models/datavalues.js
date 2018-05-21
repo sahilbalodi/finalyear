@@ -11,6 +11,7 @@ module.exports = (sequelize, DataTypes) => {
     },
     heartbeat: DataTypes.DOUBLE,
     temperature: DataTypes.DOUBLE,
+    ecg: DataTypes.DOUBLE,
   }, {});
   datavalues.associate = function (models) {
     // associations can be defined here

@@ -40,10 +40,12 @@ server.route([{
     const { name } = request.query;
     const { heartbeat } = request.query;
     const { temperature } = request.query;
+    const { ecg } = request.query;
     Models.datavalues.create({
       name,
       heartbeat,
       temperature,
+      ecg,
     }).then(() => {
       const { message } = request.query;
       if (!(message === null) && !(message === undefined)) {

@@ -23,6 +23,10 @@ module.exports = {
       type: Sequelize.DOUBLE,
       allowNull: false,
     },
+    ecg: {
+      type: Sequelize.DOUBLE,
+      allowNull: false,
+    },
     createdAt: {
       allowNull: false,
       type: Sequelize.DATE,
