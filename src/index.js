@@ -19,7 +19,7 @@ server.route([{
   path: '/css',
   method: 'GET',
   handler: {
-    file: path.join(__dirname, './build/static/css/main.86033d0d.css'),
+    file: path.join(__dirname, './build/static/css/main.ef2dc8c0.css'),
   },
 }, {
   path: '/img',
@@ -31,7 +31,7 @@ server.route([{
   path: '/js',
   method: 'GET',
   handler: {
-    file: path.join(__dirname, './build/static/js/main.4126a511.js'),
+    file: path.join(__dirname, './build/static/js/main.36ad9459.js'),
   },
 }, {
   path: '/data',
