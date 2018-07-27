@@ -19,19 +19,19 @@ server.route([{
   path: '/css',
   method: 'GET',
   handler: {
-    file: path.join(__dirname, './build/static/css/main.main.86033d0d.css'),
+    file: path.join(__dirname, './build/static/css/main.86033d0d.css'),
   },
 }, {
   path: '/img',
   method: 'GET',
   handler: (request, response) => {
-    response(fs.readFileSync(path.join(__dirname, '../img.png')));
+    response(fs.readFileSync(path.join(__dirname, '../img.jpeg')));
   },
 }, {
   path: '/js',
   method: 'GET',
   handler: {
-    file: path.join(__dirname, './build/static/js/main.main.4126a511.js'),
+    file: path.join(__dirname, './build/static/js/main.4126a511.js'),
   },
 }, {
   path: '/data',
